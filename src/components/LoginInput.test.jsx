@@ -53,11 +53,11 @@ describe('LoginInput component', () => {
     // Arrange
     const mockLogin = vi.fn();
     render(<LoginInput login={mockLogin} />);
-    const usernameInput = await screen.getByPlaceholderText('Username');
+    const usernameInput = screen.getByPlaceholderText('Username');
     await userEvent.type(usernameInput, 'usernametest');
-    const passwordInput = await screen.getByPlaceholderText('Password');
+    const passwordInput = screen.getByPlaceholderText('Password');
     await userEvent.type(passwordInput, 'passwordtest');
-    const loginButton = await screen.getByRole('button', { name: 'Login' });
+    const loginButton = screen.getByRole('button', { name: 'Login' });
 
     // Action
     await userEvent.click(loginButton);
